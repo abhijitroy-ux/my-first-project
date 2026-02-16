@@ -86,3 +86,45 @@ curl "http://localhost:8000/tasks"
   - Task statuses/labels/priorities
   - Reminder notifications
   - Gmail Add-on frontend
+
+
+## 5) Transfer this project to GitHub
+
+### Option A: New GitHub repo (first push)
+
+1. Create an empty repository on GitHub (no README/license).
+2. In this project folder, run:
+
+```bash
+git init
+git add .
+git commit -m "Initial Gmail Tasks API"
+git branch -M main
+git remote add origin https://github.com/<your-username>/<your-repo>.git
+git push -u origin main
+```
+
+### Option B: Existing local git repo (most likely your case)
+
+If this folder is already a git repo, just connect remote and push:
+
+```bash
+git remote add origin https://github.com/<your-username>/<your-repo>.git
+# or, if origin already exists:
+# git remote set-url origin https://github.com/<your-username>/<your-repo>.git
+
+git push -u origin $(git branch --show-current)
+```
+
+### If GitHub asks for authentication
+
+Use either:
+- GitHub CLI: `gh auth login`
+- Personal Access Token (PAT) when prompted for password over HTTPS
+- SSH remote instead of HTTPS (after adding your SSH key to GitHub)
+
+You can verify remote config with:
+
+```bash
+git remote -v
+```

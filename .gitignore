@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local app data / secrets
+client_secret.json
+token.json
+tasks.db
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
